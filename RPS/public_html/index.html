@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+    <title>Rock Paper Scissors!</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                background-image: url("images/background.jpg");
+                background-size: 1920px 1500px;
+                background-color: CornflowerBlue;
+            }
+            h1 {
+                color: white;
+                text-align: center;
+                font-size: 80px;
+            }
+            Button {
+                  text-align: center;
+                  font-size: 50px;
+                  margin: 10px;
+                  padding: 10px;
+            }
+            .grid-container {
+                display: grid;
+                grid-template-columns: auto auto;
+                padding: 10px;
+            }
+            .grid-item {
+                background-color: rgba(255, 255, 255, 0.4);
+                border: 1px solid rgba(0, 0, 0, 0.8);
+                padding: 20px;
+                font-size: 30px;
+                text-align: center;
+            }
+            .grid-title {
+                background-color: rgba(255, 255, 255, 0.8);
+                border: 1px solid rgba(0, 0, 0, 0.8);
+                padding: 20px;
+                font-size: 30px;
+                text-align: center;
+                grid-column-start: 1;
+                grid-column-end: 3;
+            }
+        </style>
+    </head>
+    <body>
+        <h1><u>Rock Paper Scissors!</u></h1>
+        <div class="grid-container">
+        <div class="grid-title">Information:</div>
+        <div class="grid-title">Rock paper scissors is a hand game, usually played between two people, in which each player 
+            simultaneously forms one of three shapes with an outstretched hand. These shapes are "Rock", "Paper", and "Scissors".</div>
+        <div class="grid-title">Options:</div>  
+        <div class="grid-title"><img src="images/RPS.png" width="560" height="445"></div>
+        <div class="grid-title">So as stated above. Rock beats Scissors! Scissors beats Paper! Paper Beats Rock! If you get two of the same options its a tie!</div>
+        <div class="grid-title">Lets Play! You are player1. The AI is Player 2.</div>  
+        <div class="grid-item"><button onclick="theGame()">Play!</button></div>
+        <div class="grid-item"><button onclick="window.close()">Quit</button></div>
+        </div>
+       
+        <script type="text/javascript">
+           function theGame() {
+           var words = ["Rock","Paper","Scissors"];
+    
+           var player1 = prompt("Pick and option: Rock, Paper, or Scissors"); 
+           var player2 = words[Math.floor(Math.random() * words.length)];
+               // words[Math.floor(Math.random() * words.length)];
+               
+            if (player1 === player2){
+                    alert("Its a Tie");
+           } 
+             if (player1 === "Rock"){
+                if (player2 === "Scissors"){
+                    alert("Player 1 has chosen Rock, Player 2 has chosen Scissors");
+                    alert("Player 1 has Won!");
+           }}
+             if (player1 === "Paper"){
+                if (player2 === "Rock"){
+                    alert("Player 1 has chosen Paper, Player 2 has chosen Rock");
+                    alert("Player 1 has Won!");
+           }}
+             if (player1 === "Scissors"){
+                if (player2 === "Paper"){
+                    alert("Player 1 has chosen Scissors, Player 2 has chosen Paper");
+                    alert("Player 1 has Won!");
+           }}
+       
+             if (player2 === "Rock"){
+                if (player1 === "Scissors"){
+                    alert("Player 1 has chosen Scissors, Player 2 has chosen Rock");
+                    alert("Player 2 has Won!");
+           }}
+             if (player2 === "Paper"){
+                if (player1 === "Rock"){
+                    alert("Player 1 has chosen Rock, Player 2 has chosen Paper");
+                    alert("Player 2 has Won!");
+           }}
+             if (player2 === "Scissors"){
+                if (player1 === "Paper"){
+                    alert("Player 1 has chosen Paper, Player 2 has chosen Scissors");
+                    alert("Player 2 has Won!");
+           }}
+
+    }     
+        </script>
+    </body>
+</html>
